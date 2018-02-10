@@ -1,5 +1,5 @@
 /*Exercise2_TCL(Transaction Control Language)
-Update : 2018-02-07, Kang Han.
+Update : 2018-02-10, Kang Han.
 
 아래의 SQL은 『SQL 전문가 가이드』에 따른 연습입니다.*/
 
@@ -31,3 +31,36 @@ COMMIT;
 
 SELECT *
 FROM PLAYER;
+
+/*이하 SQL은 1.축구_k리그_oracle용_2010년.sql을 실행한 후, 진행한 실습이다.*/
+
+/*p.197~ ROLLBACK*/
+
+/*예제 1*/
+INSERT INTO PLAYER
+(PLAYER_ID, TEAM_ID, PLAYER_NAME, POSITION, HEIGHT, WEIGHT, BACK_NO)
+VALUES ('1999035', 'K02', '이운재', 'GK', 182, 82, 1);
+
+SELECT *
+FROM PLAYER;
+
+ROLLBACK;
+
+SELECT *
+FROM PLAYER;
+
+
+/*예제 2*/
+UPDATE PLAYER
+SET HEIGHT = 100;
+
+SELECT *
+FROM PLAYER;
+
+ROLLBACK;
+
+SELECT *
+FROM PLAYER;
+
+
+/*예제 3*/

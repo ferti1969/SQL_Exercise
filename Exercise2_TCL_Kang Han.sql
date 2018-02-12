@@ -1,5 +1,5 @@
 /*Exercise2_TCL(Transaction Control Language)
-Update : 2018-02-10, Kang Han.
+Update : 2018-02-12, Kang Han.
 
 아래의 SQL은 『SQL 전문가 가이드』에 따른 연습입니다.*/
 
@@ -84,6 +84,16 @@ SELECT *
 FROM PLAYER;
 
 ROLLBACK TO SVPT1;
+
+SELECT *
+FROM PLAYER;
+
+
+SAVEPOINT SVPT1;
+
+INSERT INTO PLAYER
+(PLAYER_ID, TEAM_ID, PLAYER_NAME, POSITION, HEIGHT, WEIGHT, BACK_NO)
+VALUES ('1999035', 'K02', '이운재', 'GK', 182, 82, 1);
 
 SELECT *
 FROM PLAYER;

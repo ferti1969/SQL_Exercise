@@ -1,5 +1,5 @@
 /*Exercise3_WHERE 조건절
-Update : 2018-02-14, Kang Han.
+Update : 2018-02-17, Kang Han.
 
 아래의 SQL은 『SQL 전문가 가이드』에 따른 연습입니다.*/
 
@@ -62,4 +62,15 @@ AND DEPTNO IN (20,30);
 SELECT PLAYER_NAME 선수이름, POSITION 포지션, BACK_NO 백넘버, HEIGHT 키
 FROM PLAYER
 WHERE POSITION LIKE 'MF';
+
+/*wildcard 사용*/
+SELECT PLAYER_NAME 선수이름, POSITION 포지션, BACK_NO 백넘버, HEIGHT 키
+FROM PLAYER
+WHERE PLAYER_NAME LIKE '장%';
+
+
+/*BETWEEN a AND b 연산자*/
+SELECT PLAYER_NAME 선수이름, POSITION 포지션, BACK_NO 백넘버, HEIGHT 키
+FROM PLAYER
+WHERE HEIGHT BETWEEN 170 AND 180;
 

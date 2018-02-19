@@ -1,5 +1,5 @@
 /*Exercise4_FUNCTION 함수
-Update : 2018-02-18, Kang Han.
+Update : 2018-02-20, Kang Han.
 
 아래의 SQL은 『SQL 전문가 가이드』에 따른 연습입니다.*/
 
@@ -209,3 +209,31 @@ SELECT ENAME, SAL,
               END)
     END AS BONUS
 FROM EMP;
+
+
+/*p.245~ _ NULL 관련 함수*/
+SELECT NVL(NULL, 'NVL-OK') NVL_TEST
+FROM DUAL;
+
+SELECT NVL('Not-Null', 'NVL-OK') NVL_TEST
+FROM DUAL;
+
+SELECT PLAYER_NAME 선수명, POSITION, NVL(POSITION,'없음') 포지션
+FROM PLAYER
+WHERE TEAM_ID = 'K08';
+
+SELECT PLAYER_NAME 선수명, POSITION,
+       CASE WHEN POSITION IS NULL
+            THEN '없음'
+            ELSE POSITION
+       END AS 포지션
+FROM PLAYER
+WHERE TEAM_ID = 'K08';
+
+SELECT ENAME 사원명, SAL 월급, COMM 커미션,
+       (SAL * 12) + COMM 연봉A, (SAL * 12) + NVL(COMM,0) 연봉B
+FROM EMP;
+
+SELECT MGR
+FROM EMP
+WHERE ENAME='SCOTT';

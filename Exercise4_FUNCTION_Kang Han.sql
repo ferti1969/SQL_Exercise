@@ -1,5 +1,5 @@
 /*Exercise4_FUNCTION 함수
-Update : 2018-02-21, Kang Han.
+Update : 2018-02-23, Kang Han.
 
 아래의 SQL은 『SQL 전문가 가이드』에 따른 연습입니다.*/
 
@@ -252,3 +252,9 @@ WHERE ENAME='KING';
 SELECT NVL(MGR,9999) MGR
 FROM EMP
 WHERE ENAME='KING';
+
+
+/*p.250~ 예제*/
+SELECT MGR
+FROM EMP
+WHERE ENAME='JSC';

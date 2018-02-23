@@ -1,5 +1,5 @@
 /*Exercise4_FUNCTION 함수
-Update : 2018-02-23, Kang Han.
+Update : 2018-02-24, Kang Han.
 
 아래의 SQL은 『SQL 전문가 가이드』에 따른 연습입니다.*/
 
@@ -255,6 +255,15 @@ WHERE ENAME='KING';
 
 
 /*p.250~ 예제*/
+SELECT *
+FROM DUAL;
+
+SELECT 1
+FROM DUAL
+WHERE 1 = 2;
+/*위의 SQL 문장은 왜 공집합을 발생시키는 것인지,
+'SELECT 1'이 의미하는 바는 무엇인지 생각해 보기.*/
+
 SELECT MGR
 FROM EMP
 WHERE ENAME='JSC';

@@ -1,5 +1,5 @@
 /*Exercise6_ORDER BY 절
-Update : 2018-02-25, Kang Han.
+Update : 2018-02-26, Kang Han.
 
 아래의 SQL은 『SQL 전문가 가이드』에 따른 연습입니다.*/
 
@@ -32,3 +32,9 @@ ORDER BY DNAME, AREA, DEPTNO DESC;
 SELECT DNAME, LOC AREA, DEPTNO
 FROM DEPT
 ORDER BY 1, AREA, 3 DESC;
+
+
+/*p.274~ SELECT 문장 실행 순서*/
+SELECT EMPNO, ENAME
+FROM EMP
+ORDER BY MGR;

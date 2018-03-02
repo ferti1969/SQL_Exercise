@@ -1,5 +1,5 @@
 /*Exercise.*/
-/*Update : 2018-02-04, Kang Han.*/
+/*Update : 2018-03-03, Kang Han.*/
 
 /* 아래는 『SQL 전문가 가이드』에 따른 연습이며,
 강한이 개인적으로 만든 예제 데이터를 활용했습니다.*/
@@ -66,9 +66,21 @@ INSERT INTO PLAYER
     (PLAYER_ID, PLAYER_NAME, TEAM_ID, POSITION, HEIGHT, WEIGHT, BACK_NO)
     VALUES ('2002007', '박지성', 'K07', 'MF', 178, 73, 7);
 
+DESCRIBE CAEMP;
+
+SELECT *
+FROM CAEMP;
+
 INSERT INTO CAEMP
     (EMPNO, NAME, JOB, MGR, PHONE, EMAIL, ADDRESS, HIREDATE, RESIGNDATE, SAL, COMM, DEPTNO)
     VALUES(14, '박내일', 'REPORTER', 3, '010-0101-1010', 'parktomorrow@gmail.com', '경기도 양주시 고암길 306-40, 200동 501호', '18/02/02', NULL, 1500000, 250000, 2);
+
+INSERT INTO CAEMP
+    (EMPNO, NAME, JOB, MGR, PHONE, ADDRESS, SAL)
+    VALUES (15, '김태인', 'EDITOR', 3, '010-8282-7979', '서울특별시 종로구 계동2길 22', 1500000);
+/*위와 같이 SQL 문장을 작성해 실행할 경우, 오류가 발생한다.
+이유는 오류 메시지를 잘 살펴보면 알 수 있다.
+NOT NULL 속성이 지정된 'HIREDATE'가 입력에서 빠졌기 때문인 것으로 보인다.*/
     
 SELECT *
 FROM CAEMP;

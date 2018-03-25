@@ -71,6 +71,7 @@ DESCRIBE CAEMP;
 SELECT *
 FROM CAEMP;
 
+/*이하는 내가 만든 연습용 데이터를 활용한 연습이다.*/
 INSERT INTO CAEMP
     (EMPNO, NAME, JOB, MGR, PHONE, EMAIL, ADDRESS, HIREDATE, RESIGNDATE, SAL, COMM, DEPTNO)
     VALUES(14, '박내일', 'REPORTER', 3, '010-0101-1010', 'parktomorrow@gmail.com', '경기도 양주시 고암길 306-40, 200동 501호', '18/02/02', NULL, 1500000, 250000, 2);
@@ -81,12 +82,23 @@ INSERT INTO CAEMP
 /*위와 같이 SQL 문장을 작성해 실행할 경우, 오류가 발생한다.
 이유는 오류 메시지를 잘 살펴보면 알 수 있다.
 NOT NULL 속성이 지정된 'HIREDATE'가 입력에서 빠졌기 때문인 것으로 보인다.*/
+
+INSERT INTO CAEMP
+    (EMPNO, NAME, JOB, MGR, PHONE, ADDRESS, HIREDATE, SAL)
+    VALUES (15, '김태인', 'EDITOR', 3, '010-8282-7979', '서울특별시 종로구 계동2길 22', '18/03/02', 1500000);
+/*위와 같이 SQL 문장을 고치면 정상적으로 실행되는 것을 볼 수 있다.*/
     
+INSERT INTO CAEMP
+    VALUES(15, '김성경', 'EDITOR', 8, '010-1010-0101', 'kimbible@gmail.com', '서울특별시 은평구 불광로 111-01 101호', '18/02/02', NULL, 1500000, 250000, 1);
+/*아직은 위의 SQL 문장과 같이 'EMPNO'에 이미 입력돼 있는 15를 중복해 넣어도 오류가 발생하지 않는다.*/
+
 SELECT *
 FROM CAEMP;
 
-INSERT INTO CAEMP
-    VALUES(15, '김성경', 'EDITOR', 8, '010-1010-0101', 'kimbible@gmail.com', '서울특별시 은평구 불광로 111-01 101호', '18/02/02', NULL, 1500000, 250000, 1);
+ROLLBACK;
+
+SELECT *
+FROM CAEMP;
 
 /*p.183*/
 INSERT INTO PLAYER
